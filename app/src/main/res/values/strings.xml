@@ -1,14 +1,9 @@
 <resources>
   <string name="app_name">RPS</string>
-  <string name="run_toggle_on">Stop!</string>
-  <string name="run_toggle_off">Run!</string>
   <string name="run_menu_text">Run</string>
   <string name="pause_menu_text">Pause</string>
   <string name="settings_menu_text">Settings&#8230;</string>
   <string name="reset_menu_text">Reset</string>
-  <string name="moore_menu_text">Moore</string>
-  <string name="neighborhood_menu_text">Neighborhood</string>
-  <string name="von_neumann_menu_text">Von Neumann</string>
   <string name="pref_neighborhood_default">von_neumann</string>
   <string name="pref_neighborhood_title">Interaction neighborhood</string>
   <string name="pref_neighborhood_summary">Controls whether diagonally adjacent cells are considered neighbors</string>
