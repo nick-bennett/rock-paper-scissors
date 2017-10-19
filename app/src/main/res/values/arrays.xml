@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="pref_neighborhood_names">
+    <item>Von Neumann (no diagonal adjacency)</item>
+    <item>Moore (diagonal adjacency)</item>
+  </string-array>
+  <string-array name="pref_neighborhood_values">
+    <item>von_neumann</item>
+    <item>moore</item>
+  </string-array>
+</resources>
