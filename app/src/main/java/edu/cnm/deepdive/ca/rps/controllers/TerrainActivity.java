@@ -2,21 +2,14 @@ package edu.cnm.deepdive.ca.rps.controllers;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
 import edu.cnm.deepdive.ca.rps.R;
 import edu.cnm.deepdive.ca.rps.models.Terrain;
 import edu.cnm.deepdive.ca.rps.views.TerrainView;
 
-/**
- * This is a controller class for a simple Android app that runs a Rock-Paper-Scissors ecosystem
- * model, presenting the changing system state as an animated image.
- *
- * @author Nicholas Bennett &amp; Deep Dive Coding Java+Android+SalesForce Bootcamp Cohort 2
- * @version 1.0, 2017-10-20
- */
 public class TerrainActivity extends AppCompatActivity {
 
   private static final int RUNNER_THREAD_REST = 40;
@@ -24,10 +17,10 @@ public class TerrainActivity extends AppCompatActivity {
 
   private boolean running = false;
   private boolean inForeground = false;
-  private Terrain terrain;
-  private Runner runner = null;
-  private TerrainView terrainView;
+  private Terrain terrain = null;
+  private TerrainView terrainView = null;
   private View terrainLayout;
+  private Runner runner = null;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -69,19 +62,20 @@ public class TerrainActivity extends AppCompatActivity {
     switch (item.getItemId()) {
       case R.id.run_item:
         setRunning(true);
-        invalidateOptionsMenu();
-        return true;
+        break;
       case R.id.pause_item:
         setRunning(false);
-        invalidateOptionsMenu();
-        return true;
+        break;
       case R.id.reset_item:
         setInForeground(false);
         initializeModel();
         setInForeground(true);
-        return true;
+        break;
+      default:
+        return super.onOptionsItemSelected(item);
     }
-    return super.onOptionsItemSelected(item);
+    invalidateOptionsMenu();
+    return true;
   }
 
   private void initializeModel() {
@@ -135,14 +129,14 @@ public class TerrainActivity extends AppCompatActivity {
           terrainView.setSource(terrain.getSnapshot());
           try {
             Thread.sleep(RUNNER_THREAD_REST);
-          } catch (InterruptedException e) {
-            // Do nothing
+          } catch (InterruptedException ex) {
+            // Do nothing.
           }
         }
         try {
           Thread.sleep(RUNNER_THREAD_SLEEP);
-        } catch (InterruptedException e) {
-          // Do nothing
+        } catch (InterruptedException ex) {
+          // Do nothing.
         }
       }
     }
