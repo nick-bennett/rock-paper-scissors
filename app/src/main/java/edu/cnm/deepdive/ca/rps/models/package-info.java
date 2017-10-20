@@ -1,10 +1,10 @@
 /**
  * Classes that implement a Rock-Paper-Scissors (RPS) model of an ecosystem with cyclic dominance
  * between 3 species. In this modeling approach, each individual's play is not based on a conscious
- * choice in the moment, but on the individual's species (more often called <em>breed</em> in the
- * agent-based modeling context). In each conflict between individuals (which are generally chosen
- * based on some kind of spacial adjacency), the loser is replaced by an individual of the winner's
- * breed.
+ * choice in the moment, but on the individual's species (more often called <em>breed</em>,
+ * following agent-based modeling conventions). In each conflict between individuals (generally
+ * chosen at random, subject to the constraint that they are neighbors in a spatial or network
+ * sense), the loser is replaced by an individual of the winner's breed.
  * <p>
  * As noted in <a
  * href="http://guava.physics.uiuc.edu/~nigel/courses/569/Essays_Spring2006/files/kircher.pdf">
