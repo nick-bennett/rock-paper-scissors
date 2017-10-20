@@ -10,6 +10,13 @@ import edu.cnm.deepdive.ca.rps.R;
 import edu.cnm.deepdive.ca.rps.models.Terrain;
 import edu.cnm.deepdive.ca.rps.views.TerrainView;
 
+/**
+ * This is a controller class for a simple Android app that runs a Rock-Paper-Scissors ecosystem
+ * model, presenting the changing system state as an animated image.
+ *
+ * @author Nicholas Bennett &amp; Deep Dive Coding Java+Android+SalesForce Bootcamp Cohort 2
+ * @version 1.0, 2017-10-20
+ */
 public class TerrainActivity extends AppCompatActivity {
 
   private static final int RUNNER_THREAD_REST = 40;

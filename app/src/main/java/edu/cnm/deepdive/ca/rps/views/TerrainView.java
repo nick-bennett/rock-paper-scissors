@@ -19,6 +19,9 @@ import edu.cnm.deepdive.ca.rps.models.Breed;
  * <p>
  * As currently implemented, all of the drawing is done on the UI thread; delegating this
  * work to other threads is one of the planned refinements for the future.
+ *
+ * @author Nicholas Bennett &amp; Deep Dive Coding Java+Android+SalesForce Bootcamp Cohort 2
+ * @version 1.0, 2017-10-20
  */
 public class TerrainView extends View {
 
@@ -96,9 +99,8 @@ public class TerrainView extends View {
 
   @Override
   protected void onDraw(Canvas canvas) {
-    if (!drawing && source != null) {
+    if (source != null) {
       super.onDraw(canvas);
-      setDrawing(true);
       Breed[][] cells = source;
       float cellSize = Math.min(1.0f * canvas.getHeight() / cells.length,
           1.0f * canvas.getWidth() / cells[0].length);
@@ -119,25 +121,19 @@ public class TerrainView extends View {
               j * cellSize, i * cellSize, (j + 1) * cellSize, (i + 1) * cellSize, paint);
         }
       }
-      setDrawing(false);
     }
   }
 
   /**
+   * Specifies a 2-dimensional array of RPS {@link Breed} instances, for use in drawing. This array
+   * should be effectively non-volatile &ndash; that is, the contents should not change while
+   * drawing is being performed.
    *
-   * @param source 2-dimensional array of RPS population
+   * @param source array of RPS population members
    */
   public synchronized void setSource(Breed[][] source) {
     this.source = source;
     postInvalidate();
-  }
-
-  /**
-   *
-   * @param drawing semphore indicating whether drawing is being performed at this moment
-   */
-  private synchronized void setDrawing(boolean drawing) {
-    this.drawing = drawing;
   }
 
 }
