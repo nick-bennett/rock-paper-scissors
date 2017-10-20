@@ -1,0 +1,11 @@
+# RPS Ecosystem
+
+This project is a simple Android app that instantiates, presents an animated view of, and supports interaction with, a rock-paper-scissors (RPS) ecosystem model. RPS is used to model an ecosystem with cyclic dominance between 3 species. In this modeling approach, each individual's play is not based on a conscious choice in the moment, but on the individual's species (often called _breed_, following agent-based modeling conventions). In each conflict between individuals (generally chosen at random, subject to the constraint that they are neighbors in a spatial or network sense), the loser is replaced by an individual of the winner's breed.
+
+As noted in ["Emergent Behavior of Rock-Paper-Scissors Game"](http://guava.physics.uiuc.edu/~nigel/courses/569/Essays_Spring2006/files/kircher.pdf) (K. Kircher, 2006), while such an approach may seem overly simplistic, it not only models some ecosystems quite well, but is also instructive in understanding many others with non-transitive predation or competition. (It's also a useful learning model for students of cellular automata, ecosystem modeling, model-view-controller design, etc.)
+
+While this model is inspired and informed by agent-based models on the same topic, this is not itself an agent-based model. Rather than each inhabitant of the terrain being a distinct instance of a breed (or member of a breed set), each is a reference to one of the small group of instances of a Breed enumerated type (Java `enum`). This means (for example) that there is no distinction between a `Breed.ROCK` object at one location in the terrain and a `Breed.ROCK` object at another point: they are not just equal in terms of their states, but also in terms of their identities.
+
+In this implementation, user interaction is limited to starting, stopping, and re-initializing the model; future enhancements will include a settings screen, allowing the user to set key model and view parameters. Also, while the model updates run in a separate thread (other than the main UI thread) in this version, rendering of the `Breed` objects on the terrain is performed in the UI thread; this will also change in a future version.
+
+[Javadoc](docs/index.html)
