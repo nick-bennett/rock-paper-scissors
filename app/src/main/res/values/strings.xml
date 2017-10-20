@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">RPS</string>
+  <string name="app_name">RPS Ecosystem</string>
   <string name="run_menu_text">Run</string>
   <string name="pause_menu_text">Pause</string>
   <string name="settings_menu_text">Settings&#8230;</string>
